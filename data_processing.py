@@ -57,7 +57,7 @@ def stats(df,lines=1):
     return(df_stats)
 
 df_stats = stats(df_toxcast)
-#df_stats.to_csv('/Users/Allen/Desktop/Dissertation_scripts/assay_stats.csv')
+#df_stats.to_csv('data/assay_stats.csv')
 print(df_stats)
 
 
@@ -66,7 +66,12 @@ print(df_stats)
 df_ames_stats = stats(df_ames,2)
 df_tox21_stats = stats(df_tox21,2)
 
+df_ames_stats.to_csv('data/ames_assay_stats.csv')
+df_tox21_stats.to_csv('data/tox21_assay_stats.csv')
+
+#Plotting function to create plot of fractions of active and missing data in the assays
 def plot_stats(df, name):
+    plt.clf()
     plt.scatter(df['fraction_active'], df['fraction_missing'], marker = 'x', s=20, label = name)
     plt.title('Fractions of missing and active labels in '+ name +' Data')
     plt.xlabel('Fraction of Assay Active')
