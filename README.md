@@ -1,2 +1,2 @@
 # interview_repo
-A collection of scripts used throughout my masters project
+A selection of scripts taken from work I have undertaken in the past.
